@@ -1,0 +1,120 @@
+DELETE THIS FILE LATER, IT'S JUST TO SEE HOW THE JSON'S FORMATTED
+
+{
+  "Title": "Shrek",
+  "Year": "2001",
+  "Rated": "PG",
+  "Released": "18 May 2001",
+  "Runtime": "90 min",
+  "Genre": "Animation, Adventure, Comedy",
+  "Director": "Andrew Adamson, Vicky Jenson",
+  "Writer": "William Steig, Ted Elliott, Terry Rossio",
+  "Actors": "Mike Myers, Eddie Murphy, Cameron Diaz",
+  "Plot": "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
+  "Language": "English",
+  "Country": "United States",
+  "Awards": "Won 1 Oscar. 40 wins & 60 nominations total",
+  "Poster": "https://m.media-amazon.com/images/M/MV5BN2FkMTRkNTUtYTI0NC00ZjI4LWI5MzUtMDFmOGY0NmU2OGY1XkEyXkFqcGc@._V1_SX300.jpg",
+  "Ratings": [
+    {
+      "Source": "Internet Movie Database",
+      "Value": "7.9/10"
+    },
+    {
+      "Source": "Rotten Tomatoes",
+      "Value": "88%"
+    },
+    {
+      "Source": "Metacritic",
+      "Value": "84/100"
+    }
+  ],
+  "Metascore": "84",
+  "imdbRating": "7.9",
+  "imdbVotes": "759,870",
+  "imdbID": "tt0126029",
+  "Type": "movie",
+  "DVD": "N/A",
+  "BoxOffice": "$268,349,831",
+  "Production": "N/A",
+  "Website": "N/A",
+  "Response": "True"
+}
+
+SEARCH LIST
+{
+  "Search": [
+    {
+      "Title": "Inception",
+      "Year": "2010",
+      "imdbID": "tt1375666",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Inception: The Cobol Job",
+      "Year": "2010",
+      "imdbID": "tt5295894",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjE0NGIwM2EtZjQxZi00ZTE5LWExN2MtNDBlMjY1ZmZkYjU3XkEyXkFqcGdeQXVyNjMwNzk3Mjk@._V1_SX300.jpg"
+    },
+    {
+      "Title": "The Crack: Inception",
+      "Year": "2019",
+      "imdbID": "tt6793710",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZTc4MDliNjAtYmU4YS00NmQzLWEwNjktYTQ2MGFjNDc5MDhlXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Inception: Jump Right Into the Action",
+      "Year": "2010",
+      "imdbID": "tt5295990",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZGFjOTRiYjgtYjEzMS00ZjQ2LTkzY2YtOGQ0NDI2NTVjOGFmXkEyXkFqcGdeQXVyNDQ5MDYzMTk@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Inception: Motion Comics",
+      "Year": "2010–",
+      "imdbID": "tt1790736",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNGRkYzkzZmEtY2YwYi00ZTlmLTgyMTctODE0NTNhNTVkZGIxXkEyXkFqcGdeQXVyNjE4MDMwMjk@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Inception",
+      "Year": "2014",
+      "imdbID": "tt7321322",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BOTY3OGFlNTktYTJiZi00ZWMxLTk4MjQtNmJiODkxYThiNjg4XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Madness Inception",
+      "Year": "2022",
+      "imdbID": "tt29258696",
+      "Type": "movie",
+      "Poster": "N/A"
+    },
+    {
+      "Title": "Inception: 4Movie Premiere Special",
+      "Year": "2010",
+      "imdbID": "tt1686778",
+      "Type": "movie",
+      "Poster": "N/A"
+    },
+    {
+      "Title": "Cyberalien: Inception",
+      "Year": "2017",
+      "imdbID": "tt7926130",
+      "Type": "movie",
+      "Poster": "N/A"
+    },
+    {
+      "Title": "WWA: The Inception",
+      "Year": "2001",
+      "imdbID": "tt0311992",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNTEyNGJjMTMtZjZhZC00ODFkLWIyYzktN2JjMTcwMmY5MDJlXkEyXkFqcGdeQXVyNDkwMzY5NjQ@._V1_SX300.jpg"
+    }
+  ],
+  "totalResults": "38",
+  "Response": "True"
+}
