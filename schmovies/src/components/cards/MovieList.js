@@ -5,7 +5,7 @@ export default function MovieList({movieList}) {
         <div className="grid grid-cols-5 gap-y-8">
             {
                 movieList.map((movie) => {
-                    return <MovieCard movie={movie}/>
+                    return <MovieCard key={movie.imdbID} movie={movie}/>
                 })
             }
         </div>

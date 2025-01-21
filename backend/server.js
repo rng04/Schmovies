@@ -2,10 +2,27 @@ require('dotenv').config()
 const cors = require('cors')
 const express = require('express')
 const app = express()
+const {mongoose} = require('mongoose')
+const cookieParser = require('cookie-parser')
+
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+
+//database connection
+mongoose.connect(process.env.MONGO_URL)
+.then(() => console.log('Database connected'))
+.catch((err) => console.log('Database failed to connect',err))
 
 //middleware
 app.use(express.json())
-app.use(cors())
+app.use(cookieParser())
+app.use(express.urlencoded({extended:false}))
+app.use(cors(corsOptions))
+app.use('/', require('./routes/authRoute'))
+app.use('/api/movies', require('./routes/dbRoute'))
 
 const movieAPIurl = 'http://www.omdbapi.com/?apikey='+process.env.API_KEY
 
