@@ -1,17 +1,2 @@
-
-PUT http://localhost:5000/api/movies/update
+GET http://localhost:5000/api/movies/get?userId=678d8dd86fcb7a2089b505d3&type=favorites
 Content-Type: application/json
-
-
-{
-    "id":"678d8dd86fcb7a2089b505d3",
-    "movieId":"Shrek",
-    "isFavorite":false
-}
-
-
-
-GET http://localhost:5000/api/movies/contains?id=678d8dd86fcb7a2089b505d3&movieId=tt0126029&type=favorites
-
-
-GET http://localhost:5000/api/movies/contains?id=678d8dd86fcb7a2089b505d3&movieId=tt0126029&type=bookmarks

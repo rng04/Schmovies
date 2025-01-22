@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import dummyData from "../../../dummyData.json";
 import missingImage from "../../cards/noimage.png";
 import InfoBox from "./InfoBox";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReviewInput from "../../reviews/ReviewInput";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 export default function DetailPage() {
   const { id } = useParams();
@@ -34,7 +37,8 @@ export default function DetailPage() {
     Plot = "",
     Actors = "",
     Director = "", 
-    Writer = ""
+    Writer = "",
+    imdbID
   } = data || {}; // Ensure destructuring works even if data is null
 
   return (
@@ -47,11 +51,14 @@ export default function DetailPage() {
       >
         <div className="bg-slate-800 bg-opacity-50 flex p-5 gap-5 justify-center">  
           <img className="rounded-md bg-white" src={Poster} alt={`${id} Poster`} />
-          <InfoBox props={[Title, Year, Rated, Released, Genre, Runtime, imdbRating, Plot, Actors, Director, Writer]}/>    
+          <InfoBox props={[Title, Year, Rated, Released, Genre, Runtime, imdbRating, Plot, Actors, Director, Writer]} movieId={imdbID}/>    
         </div>
       </div>
       {/* Example for rendering multiple images */}
       <img className="rounded-md" src={Poster} alt={`${id} Poster`} />
+      <ReviewInput movieTitle={Title} movieId={imdbID} button={
+        <FontAwesomeIcon className="bg-black p-3 text-sm rounded-full opacity-80 hover:text-gray-400" icon={faPenToSquare}/>
+      }/>
     </>
   );
 }

@@ -57,7 +57,7 @@ app.get('/api/movies/:title', async (req,res) => {
             res.sendStatus(500)
         }
 
-        let searchUrl = `${movieAPIurl}&t=${title}`
+        let searchUrl = `${movieAPIurl}&i=${title}`
 
         const fetchResponse = await fetch(searchUrl)
         const data = await fetchResponse.json()

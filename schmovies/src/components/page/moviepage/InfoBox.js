@@ -1,7 +1,51 @@
-import { faBookmark, faHeart, faPenToSquare, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark, faHeart, faStar } from "@fortawesome/free-solid-svg-icons"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../../context/userContext";
+import toast from "react-hot-toast";
 
-export default function InfoBox({props}) {
+export default function InfoBox({ props, movieId }) {
+    const { user, updateMovie, containsMovie } = useContext(UserContext);
+    const [heartActive, setHeartActive] = useState(false);
+    const [bookmarkActive, setBookmarkActive] = useState(false);
+
+    async function futureToggle(isFavorite, movieId) {
+        try {
+            await updateMovie(isFavorite, movieId);
+            if (!user) return;
+
+            if (isFavorite) {
+                setHeartActive((prev) => !prev)
+            } else {
+                setBookmarkActive((prev) => !prev)
+            }
+        } catch (error) {
+            toast.error("Error updating movie:", error);
+        }
+    }
+
+    useEffect(() => {
+        if (!user) return;
+
+        let isMounted = true;
+        async function toggleSymbol() {
+            try {
+                const isFav = await containsMovie("favorites", movieId);
+                const isBookmarked = await containsMovie("bookmarks", movieId);
+
+                if (isMounted && isFav) setHeartActive(true);
+                if (isMounted && isBookmarked) setBookmarkActive(true);
+            } catch (error) {
+                console.error("Error fetching movie status:", error);
+            }
+        }
+
+        toggleSymbol();
+        return () => {
+            isMounted = false;
+        };
+    }, [user, movieId]);
+
     return (
         <div className="text-white w-1/2">
             <div className="flex gap-1 pb-2">
@@ -16,12 +60,23 @@ export default function InfoBox({props}) {
             </div>
             <div className="m-2 flex gap-4 items-center">
                 <div className="m-2 flex items-center gap-2 text-yellow-300">
-                    <FontAwesomeIcon className="text-lg" icon={faStar}/>
+                    <FontAwesomeIcon className="text-lg" icon={faStar} />
                     <p className="text-lg">{props[6]}</p>
-                 </div>
-                <FontAwesomeIcon className="bg-black p-3 text-sm  rounded-full opacity-80 hover:text-gray-400" icon={faBookmark}/>
-                <FontAwesomeIcon className="bg-black p-3 text-sm  rounded-full opacity-80 hover:text-gray-400" icon={faHeart}/>
-                <FontAwesomeIcon className="bg-black p-3 text-sm  rounded-full opacity-80 hover:text-gray-400" icon={faPenToSquare}/>
+                </div>
+                <FontAwesomeIcon
+                    onClick={() => futureToggle(false, movieId)}
+                    className={`bg-black p-3 text-sm rounded-full opacity-80 ${
+                        bookmarkActive ? "text-yellow-500 hover:text-yellow-600" : "hover:text-gray-400"
+                    }`}
+                    icon={faBookmark}
+                />
+                <FontAwesomeIcon
+                    onClick={() => futureToggle(true, movieId)}
+                    className={`bg-black p-3 text-sm rounded-full opacity-80 ${
+                        heartActive ? "text-yellow-500 hover:text-yellow-600" : "hover:text-gray-400"
+                    }`}
+                    icon={faHeart}
+                />
             </div>
             <div>
                 <h1 className="font-bold text-xl pb-2">Plot Summary</h1>
@@ -37,5 +92,5 @@ export default function InfoBox({props}) {
                 <h2 className="font-normal text-base pb-2">{props[10]}</h2>
             </div>
         </div>
-    )
+    );
 }

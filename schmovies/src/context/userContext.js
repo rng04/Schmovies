@@ -55,7 +55,6 @@ export function UserContextProvider({children}) {
             return type === "favorites" ? response.data.favorites : response.data.bookmarks
         } catch(error) {
             if(!user) {
-               toast.error("SIKE!")
             } else {     
                 toast.error("Error finding movie")
             }
